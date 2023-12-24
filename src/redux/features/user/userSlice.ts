@@ -8,6 +8,9 @@ export const userSlice = createSlice({
     user: {
       email: '',
       password: '',
+      username: 'User1',
+      imgUrl:
+        'https://static.wikia.nocookie.net/chainsaw-man/images/6/62/Asa_Mitaka_hunts_devils_for_the_Church.png/revision/latest',
       isPurchased: false,
       isStyle: null,
       weight: null,

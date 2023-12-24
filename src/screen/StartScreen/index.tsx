@@ -21,16 +21,20 @@ const StartScreen = () => {
   const { navigate } = useNavigation<StackParamList>();
 
   const handlePress = () => {
-    navigate('Menu');
+    navigate('HomeScreen');
     dispatch(setThirdScreen());
   };
 
   const handleFirstScreen = () => {
+    if (height < 120 || height > 210) return;
+
     dispatch(setHeight(height));
     dispatch(setFirstScreen());
   };
 
   const handleSecondScreen = () => {
+    if (weight < 30 || weight > 250) return;
+
     dispatch(setWeight(weight));
     dispatch(setSecondScreen());
   };
@@ -43,6 +47,7 @@ const StartScreen = () => {
     return (
       <View style={[{ flex: 1, top: 20 }, COLORS[activeTheme]]}>
         <Text style={[{ ...TEXT[activeTheme] }]}>Height: </Text>
+        <Text style={[{ ...TEXT[activeTheme], fontWeight: 300 }]}>min 120 - max 210</Text>
         <TextInput
           value={height.toString()}
           onChangeText={setHeightLocal}
@@ -58,6 +63,9 @@ const StartScreen = () => {
     return (
       <View style={[{ flex: 1, top: 20 }, COLORS[activeTheme]]}>
         <Text style={[{ ...TEXT[activeTheme] }]}>Weight: </Text>
+        <Text style={[{ ...TEXT[activeTheme], fontWeight: 300, marginBottom: 20 }]}>
+          min 30 - max 250
+        </Text>
         <TextInput
           value={weight.toString()}
           onChangeText={setWeightLocal}

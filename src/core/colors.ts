@@ -6,7 +6,6 @@ export const COLORS = {
   },
   lightMode: {
     backgroundColor: '#fff',
-
     paddingHorizontal: 20,
     paddingVertical: 20,
   },
